@@ -1,5 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
-
+﻿using MediatR;
+using Microsoft.AspNetCore.Mvc;
 
 namespace WSS.VulnShop.WebApi.Controllers
 {
@@ -7,6 +7,12 @@ namespace WSS.VulnShop.WebApi.Controllers
   [ApiController]
   public class Cart : ControllerBase
   {
+    private readonly IMediator _mediator;
+
+    public Cart(IMediator mediator)
+    {
+      _mediator = mediator;
+    }
 
     [HttpGet("{idUser}")]
     public string GetCart(int idUser)
@@ -18,7 +24,7 @@ namespace WSS.VulnShop.WebApi.Controllers
     public void AddInCart([FromBody] string value)
     {
     }
-    
+
     [HttpPut("{id}")]
     public void Put(int id, [FromBody] string value)
     {

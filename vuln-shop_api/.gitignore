@@ -536,8 +536,3 @@ obj/
 /wwwroot/node_modules
 
 # End of https://www.toptal.com/developers/gitignore/api/dotnetcore,csharp,aspnetcore
-/vuln-shop_api/WSS.VulnShop.WebApi/.vs/ProjectEvaluation/wss.vulnshop.webapi.metadata.v6.1
-/vuln-shop_api/WSS.VulnShop.WebApi/.vs/ProjectEvaluation/wss.vulnshop.webapi.projects.v6.1
-/vuln-shop_api/WSS.VulnShop.WebApi/.vs/WSS.VulnShop.WebApi/v17/.futdcache.v2
-/vuln-shop_api/WSS.VulnShop.WebApi/.vs/WSS.VulnShop.WebApi/v17/.suo
-/vuln-shop_api/WSS.VulnShop.WebApi/obj/Debug/net6.0/WSS.VulnShop.WebApi.csproj.AssemblyReference.cache

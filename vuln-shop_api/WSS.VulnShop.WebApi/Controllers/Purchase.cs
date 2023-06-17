@@ -1,5 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
-
+﻿using MediatR;
+using Microsoft.AspNetCore.Mvc;
 
 namespace WSS.VulnShop.WebApi.Controllers
 {
@@ -7,6 +7,13 @@ namespace WSS.VulnShop.WebApi.Controllers
   [ApiController]
   public class Purchase : ControllerBase
   {
+    private readonly IMediator _mediator;
+
+    public Purchase(IMediator mediator)
+    {
+      _mediator = mediator;
+    }
+
     [HttpGet]
     public IEnumerable<string> Get()
     {

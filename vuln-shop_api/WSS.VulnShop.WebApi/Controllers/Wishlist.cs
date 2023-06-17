@@ -1,6 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
-
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+﻿using MediatR;
+using Microsoft.AspNetCore.Mvc;
 
 namespace WSS.VulnShop.WebApi.Controllers
 {
@@ -8,6 +7,13 @@ namespace WSS.VulnShop.WebApi.Controllers
   [ApiController]
   public class Wishlist : ControllerBase
   {
+    private readonly IMediator _mediator;
+
+    public Wishlist(IMediator mediator)
+    {
+      _mediator = mediator;
+    }
+
     [HttpGet]
     public IEnumerable<string> Get()
     {
