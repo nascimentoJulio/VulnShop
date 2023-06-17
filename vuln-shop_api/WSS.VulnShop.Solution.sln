@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33530.505
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WSS.VulnShop.WebApi", "WSS.VulnShop.WebApi.csproj", "{F08DE280-9670-4989-879F-101D738E318E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WSS.VulnShop.WebApi", "WSS.VulnShop.WebApi\WSS.VulnShop.WebApi.csproj", "{DE89A6DE-6B45-4A0C-9A21-C4F358EAA97B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F08DE280-9670-4989-879F-101D738E318E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F08DE280-9670-4989-879F-101D738E318E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F08DE280-9670-4989-879F-101D738E318E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F08DE280-9670-4989-879F-101D738E318E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE89A6DE-6B45-4A0C-9A21-C4F358EAA97B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE89A6DE-6B45-4A0C-9A21-C4F358EAA97B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE89A6DE-6B45-4A0C-9A21-C4F358EAA97B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE89A6DE-6B45-4A0C-9A21-C4F358EAA97B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {3FE8C598-510B-4314-B6A0-F1288EFA80F0}
+		SolutionGuid = {BE14AC6C-CE14-4804-8482-6F0829283C35}
 	EndGlobalSection
 EndGlobal

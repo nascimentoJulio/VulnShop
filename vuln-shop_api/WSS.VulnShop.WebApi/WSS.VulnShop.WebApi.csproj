@@ -14,4 +14,12 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <EditorConfigFiles Remove="D:\VulnShop\vuln-shop_api\WSS.VulnShop.WebApi\.editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="D:\VulnShop\vuln-shop_api\WSS.VulnShop.WebApi\.editorconfig" />
+  </ItemGroup>
+
 </Project>
