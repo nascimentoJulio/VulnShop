@@ -23,4 +23,8 @@
     <None Include="D:\VulnShop\vuln-shop_api\WSS.VulnShop.WebApi\.editorconfig" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\WSS.VulnShop.Domain\WSS.VulnShop.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

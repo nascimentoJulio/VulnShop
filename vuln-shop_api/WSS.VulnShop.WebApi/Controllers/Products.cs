@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using WSS.VulnShop.Domain.Products.GetAllProducts;
 
 namespace WSS.VulnShop.WebApi.Controllers
 {
@@ -15,9 +16,10 @@ namespace WSS.VulnShop.WebApi.Controllers
     }
 
     [HttpGet]
-    public IEnumerable<string> Get()
+    public IActionResult Get([FromQuery] GetProductsCommand command)
     {
-      return new string [] { "value1", "value2" };
+      var result = _mediator.Send(command);
+      return Ok(result);
     }
 
     [HttpGet("{id}")]

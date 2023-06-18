@@ -541,3 +541,10 @@ obj/
 /vuln-shop_api/WSS.VulnShop.WebApi/.vs/WSS.VulnShop.WebApi/v17/.futdcache.v2
 /vuln-shop_api/WSS.VulnShop.WebApi/.vs/WSS.VulnShop.WebApi/v17/.suo
 /vuln-shop_api/WSS.VulnShop.WebApi/obj/Debug/net6.0/WSS.VulnShop.WebApi.csproj.AssemblyReference.cache
+/.vs/slnx.sqlite
+/.vs/VSWorkspaceState.json
+/backoffice-shop_api/WSS.BackofficeShop.WebApi/.vs/WSS.BackofficeShop.WebApi/v17/.suo
+/backoffice-shop_api/WSS.BackofficeShop.WebApi/obj/Container/ContainerDevelopmentMode.cache
+/backoffice-shop_api/WSS.BackofficeShop.WebApi/obj/Container/ContainerId.cache
+/backoffice-shop_api/WSS.BackofficeShop.WebApi/obj/Container/ContainerName.cache
+/backoffice-shop_api/WSS.BackofficeShop.WebApi/obj/Container/ContainerRunContext.cache
