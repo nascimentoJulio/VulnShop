@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WSS.VulnShop.WebApi", "WSS.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WSS.VulnShop.Domain", "WSS.VulnShop.Domain\WSS.VulnShop.Domain.csproj", "{5640D1AB-DB8E-4253-99BC-BB0A6EBF3F35}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WSS.VulnShop.Infrastructure.Data", "WSS.VulnShop.Infrastructure.Data\WSS.VulnShop.Infrastructure.Data.csproj", "{0D41E29A-0C55-4A23-8672-0B9A41E084CE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{5640D1AB-DB8E-4253-99BC-BB0A6EBF3F35}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5640D1AB-DB8E-4253-99BC-BB0A6EBF3F35}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5640D1AB-DB8E-4253-99BC-BB0A6EBF3F35}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D41E29A-0C55-4A23-8672-0B9A41E084CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D41E29A-0C55-4A23-8672-0B9A41E084CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D41E29A-0C55-4A23-8672-0B9A41E084CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D41E29A-0C55-4A23-8672-0B9A41E084CE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

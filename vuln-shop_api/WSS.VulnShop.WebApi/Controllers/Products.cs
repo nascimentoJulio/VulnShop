@@ -16,9 +16,9 @@ namespace WSS.VulnShop.WebApi.Controllers
     }
 
     [HttpGet]
-    public IActionResult Get([FromQuery] GetProductsCommand command)
+    public async Task<IActionResult> Get([FromQuery] GetProductsCommand command)
     {
-      var result = _mediator.Send(command);
+      var result = await _mediator.Send(command);
       return Ok(result);
     }
 

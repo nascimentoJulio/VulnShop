@@ -1,8 +1,6 @@
-﻿using WSS.VulnShop.Domain.Entities;
-
-namespace WSS.VulnShop.Domain.Products.GetAllProducts
+﻿namespace WSS.VulnShop.Domain.Entities
 {
-    public class GetProductsCommandResult
+    public class Product
     {
         public string Id { get; init; }
         public string Title { get; init; }
@@ -10,6 +8,5 @@ namespace WSS.VulnShop.Domain.Products.GetAllProducts
         public string Description { get; init; }
         public string Category { get; init; }
         public string Image { get; init; }
-        public Rating Rating { get; init; }
     }
 }

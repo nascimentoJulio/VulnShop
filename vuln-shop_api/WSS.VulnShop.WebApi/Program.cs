@@ -1,4 +1,6 @@
 using WSS.VulnShop.Domain.Products.GetAllProducts;
+using WSS.VulnShop.Domain.Repository;
+using WSS.VulnShop.Infrastructure.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +11,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblyContaining<GetProductsCommandHandler>());
+builder.Services.AddScoped<IProductsRepository, ProductsRepository>(sp => new ProductsRepository(builder.Configuration));
 
 
 var app = builder.Build();

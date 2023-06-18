@@ -1,4 +1,4 @@
-﻿namespace WSS.VulnShop.Domain
+﻿namespace WSS.VulnShop.Domain.Entities
 {
     public class Rating
     {

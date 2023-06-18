@@ -1,29 +1,31 @@
 ﻿using MediatR;
+using WSS.VulnShop.Domain.Entities;
+using WSS.VulnShop.Domain.Repository;
 
 namespace WSS.VulnShop.Domain.Products.GetAllProducts
 {
     public class GetProductsCommandHandler : IRequestHandler<GetProductsCommand, List<GetProductsCommandResult>>
     {
-        public Task<List<GetProductsCommandResult>> Handle(GetProductsCommand request, CancellationToken cancellationToken)
+        private readonly IProductsRepository _productsRepository;
+
+        public GetProductsCommandHandler(IProductsRepository productsRepository)
         {
-            var mockList = new List<GetProductsCommandResult>()
+            _productsRepository = productsRepository;
+        }
+
+        public async Task<List<GetProductsCommandResult>> Handle(GetProductsCommand request, CancellationToken cancellationToken)
+        {
+            var result = await _productsRepository.GetPaginated(request.Limit, request.Page);
+
+            return result.Select(product => new GetProductsCommandResult
             {
-                new GetProductsCommandResult
-                {
-                    Id = Guid.NewGuid().ToString(),
-                    Title = "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
-                    Price = 109.95,
-                    Description = "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
-                    Category = "men's clothing",
-                    Image = "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
-                    Rating = new Rating
-                    {
-                        Rate = 3.9,
-                        Count = 120
-                    }
-                }
-            };
-            return Task.FromResult(mockList);
+                Id = product.Id,
+                Category = product.Category,
+                Description = product.Description,
+                Image = product.Image,
+                Price = product.Price,
+                Title = product.Title
+            }).ToList();
         }
     }
 }
