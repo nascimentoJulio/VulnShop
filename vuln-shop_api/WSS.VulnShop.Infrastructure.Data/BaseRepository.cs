@@ -1,6 +1,7 @@
 ﻿using Dapper;
 using Microsoft.Extensions.Configuration;
 using Npgsql;
+using System.Collections.Generic;
 using System.Data.SqlClient;
 using WSS.VulnShop.Domain.Entities;
 using WSS.VulnShop.Domain.Repository;
@@ -24,9 +25,13 @@ namespace WSS.VulnShop.Infrastructure.Data
             throw new NotImplementedException();
         }
 
-        public Task<T> GetById(int id)
+        public async Task<T> GetById(int id)
         {
-            throw new NotImplementedException();
+            return await _conn.QueryFirstOrDefaultAsync<T>(@$"SELECT 
+                                                 *
+                                               FROM {_table}
+                                               WHERE id = @Id
+            ", new { Id = id});
         }
 
         public async Task<IEnumerable<T>> GetPaginated(int limit, int page)

@@ -1,5 +1,4 @@
 ﻿using MediatR;
-using WSS.VulnShop.Domain.Entities;
 using WSS.VulnShop.Domain.Repository;
 
 namespace WSS.VulnShop.Domain.Products.GetAllProducts
@@ -15,6 +14,8 @@ namespace WSS.VulnShop.Domain.Products.GetAllProducts
 
         public async Task<List<GetProductsCommandResult>> Handle(GetProductsCommand request, CancellationToken cancellationToken)
         {
+            if (!request.IsValid()) return null;
+
             var result = await _productsRepository.GetPaginated(request.Limit, request.Page);
 
             return result.Select(product => new GetProductsCommandResult
