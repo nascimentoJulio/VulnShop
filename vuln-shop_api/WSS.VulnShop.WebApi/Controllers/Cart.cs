@@ -1,11 +1,13 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using WSS.VulnShop.Domain.Cart.GetCart;
 
 namespace WSS.VulnShop.WebApi.Controllers
 {
   [Route("api/[controller]")]
   [ApiController]
-  public class Cart : ControllerBase
+  public class Cart : BaseController
   {
     private readonly IMediator _mediator;
 
@@ -14,13 +16,20 @@ namespace WSS.VulnShop.WebApi.Controllers
       _mediator = mediator;
     }
 
-    [HttpGet("{idUser}")]
-    public string GetCart(int idUser)
+    [Authorize]
+    [HttpGet] 
+    public async Task<IActionResult> GetCartByUser()
     {
-      return "value";
+      var command = new GetCartCommand{ Email = Email};
+      var result = await _mediator.Send(command);
+      if (result is null)
+        return NoContent();
+
+      return Ok(result);
     }
 
     [HttpPost("/add")]
+    [Authorize]
     public void AddInCart([FromBody] string value)
     {
     }

@@ -14,7 +14,7 @@ namespace WSS.VulnShop.Domain.Products.GetAllProducts
 
         public async Task<List<GetProductsCommandResult>> Handle(GetProductsCommand request, CancellationToken cancellationToken)
         {
-            if (!request.IsValid()) return null;
+            if (!request.IsValid()) throw new ArgumentNullException("Parâmetros inválidos");
 
             var result = await _productsRepository.GetPaginated(request.Limit, request.Page);
 
