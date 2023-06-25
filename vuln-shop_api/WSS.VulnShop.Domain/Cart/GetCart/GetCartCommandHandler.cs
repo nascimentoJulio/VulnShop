@@ -21,8 +21,9 @@ namespace WSS.VulnShop.Domain.Cart.GetCart
 
             return new GetCartCommandResult()
             {
-                Products = result.Products,
-                Total = result.Products.Select(p => p.Price * p.Quantity).Aggregate((acc, crr) => acc + crr)
+                Products = result?.Products,
+                Total = result.Products is not null? result.Products.Select(p => p.Price * p.Quantity)
+                                                                .Aggregate((acc, crr) => acc + crr) : 0
             };
         }
     }

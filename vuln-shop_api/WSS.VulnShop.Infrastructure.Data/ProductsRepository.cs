@@ -13,7 +13,8 @@ namespace WSS.VulnShop.Infrastructure.Data
 
         public async Task<IEnumerable<ProductsInCart>> GetProductsInCart(string email)
         {
-            return await _conn.QueryAsync<ProductsInCart>("select * from products p inner join carts c ON c.email_user = @Email", new { Email = email });
+            return await _conn.QueryAsync<ProductsInCart>(@"select * from carts c inner join products p ON c.id_product = p.id  
+                                                            where c.email_user = @Email", new { Email = email });
         }
     }
 }

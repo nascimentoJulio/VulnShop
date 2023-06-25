@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using WSS.VulnShop.Domain.Products.GetById;
 
-namespace WSS.VulnShop.Domain.Products.NovaPasta
+namespace WSS.VulnShop.Domain.Products.GetById
 {
     public class GetByIdCommand : BaseRequest, IRequest<GetByIdCommandResult>
     {

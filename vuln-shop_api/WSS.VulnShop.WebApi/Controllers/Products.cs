@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using WSS.VulnShop.Domain.Products.GetAllProducts;
-using WSS.VulnShop.Domain.Products.NovaPasta;
+using WSS.VulnShop.Domain.Products.GetById;
 
 namespace WSS.VulnShop.WebApi.Controllers
 {

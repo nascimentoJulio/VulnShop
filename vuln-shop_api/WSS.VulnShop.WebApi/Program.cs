@@ -12,6 +12,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblyContaining<GetProductsCommandHandler>());
 builder.Services.AddScoped<IProductsRepository, ProductsRepository>(sp => new ProductsRepository(builder.Configuration));
+builder.Services.AddScoped<ICartRepository, CartRepository>(sp => new CartRepository(builder.Configuration));
 builder.Services.AddAuthentication("Bearer")
     .AddIdentityServerAuthentication("Bearer", options =>
     {

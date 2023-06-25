@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using WSS.VulnShop.Domain.Cart.AddInCart;
 using WSS.VulnShop.Domain.Cart.GetCart;
 
 namespace WSS.VulnShop.WebApi.Controllers
@@ -30,8 +31,14 @@ namespace WSS.VulnShop.WebApi.Controllers
 
     [HttpPost("/add")]
     [Authorize]
-    public void AddInCart([FromBody] string value)
+    public async Task<IActionResult> Add([FromBody] AddInCartCommand command)
     {
+      command.Email = Email; 
+      var result = await _mediator.Send(command);
+      if (result is 0)
+        return BadRequest();
+
+      return Ok(result);
     }
 
     [HttpPut("{id}")]

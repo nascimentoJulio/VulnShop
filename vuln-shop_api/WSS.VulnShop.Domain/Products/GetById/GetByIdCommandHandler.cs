@@ -1,5 +1,4 @@
 ﻿using MediatR;
-using WSS.VulnShop.Domain.Products.NovaPasta;
 using WSS.VulnShop.Domain.Repository;
 
 namespace WSS.VulnShop.Domain.Products.GetById
@@ -13,7 +12,7 @@ namespace WSS.VulnShop.Domain.Products.GetById
         }
         public async Task<GetByIdCommandResult> Handle(GetByIdCommand request, CancellationToken cancellationToken)
         {
-            if (!request.IsValid()) return null;
+            if (!request.IsValid()) throw new ArgumentException("Parâmetros inválidos");
 
             var result = await _productsRepository.GetById(request.Id);
 
