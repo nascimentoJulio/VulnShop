@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using WSS.VulnShop.Domain.Cart.AddInCart;
 using WSS.VulnShop.Domain.Cart.GetCart;
+using WSS.VulnShop.Domain.Cart.UpdateItemQuantity;
 
 namespace WSS.VulnShop.WebApi.Controllers
 {
@@ -29,7 +30,7 @@ namespace WSS.VulnShop.WebApi.Controllers
       return Ok(result);
     }
 
-    [HttpPost("/add")]
+    [HttpPost("add")]
     [Authorize]
     public async Task<IActionResult> Add([FromBody] AddInCartCommand command)
     {
@@ -41,9 +42,16 @@ namespace WSS.VulnShop.WebApi.Controllers
       return Ok(result);
     }
 
-    [HttpPut("{id}")]
-    public void Put(int id, [FromBody] string value)
+    [Authorize]
+    [HttpPut("alter")]
+    public async Task<IActionResult> Put([FromBody] UpdateItemQuantityCommand command)
     {
+      command.Email = Email;
+      var result = await _mediator.Send(command);
+      if (result is 0)
+        return BadRequest();
+
+      return Ok(result);
     }
 
     [HttpDelete("{id}")]
