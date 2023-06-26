@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using WSS.VulnShop.Domain.Cart.AddInCart;
+using WSS.VulnShop.Domain.Cart.DeleteItem;
 using WSS.VulnShop.Domain.Cart.GetCart;
 using WSS.VulnShop.Domain.Cart.UpdateItemQuantity;
 
@@ -54,9 +55,17 @@ namespace WSS.VulnShop.WebApi.Controllers
       return Ok(result);
     }
 
-    [HttpDelete("{id}")]
-    public void Delete(int id)
+    [HttpDelete("{productId}")]
+    [Authorize]
+    public async Task<IActionResult> Delete(int productId)
     {
+      var command = new DeleteItemCommand { Email = Email, ProductId = productId };
+     
+      var result = await _mediator.Send(command);
+      if (result is 0)
+        return BadRequest();
+
+      return Ok(result);
     }
   }
 }
