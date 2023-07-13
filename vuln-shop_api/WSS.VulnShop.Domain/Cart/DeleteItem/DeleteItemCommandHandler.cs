@@ -3,11 +3,11 @@ using WSS.VulnShop.Domain.Repository;
 
 namespace WSS.VulnShop.Domain.Cart.DeleteItem
 {
-    public class DeleteCommandHandler : IRequestHandler<DeleteItemCommand, int>
+    public class DeleteItemCommandHandler : IRequestHandler<DeleteItemCommand, int>
     {
         private readonly ICartRepository _cartRepository;
 
-        public DeleteCommandHandler(ICartRepository cartRepository)
+        public DeleteItemCommandHandler(ICartRepository cartRepository)
         {
             _cartRepository = cartRepository;
         }
