@@ -3,7 +3,7 @@ using WSS.VulnShop.Domain.Products.GetById;
 
 namespace WSS.VulnShop.Domain.Products.GetById
 {
-    public class GetByIdCommand : BaseRequest, IRequest<GetByIdCommandResult>
+    public class GetByIdCommand : BaseRequest<GetByIdCommandResult>
     {
         public int Id { get; set; }
 

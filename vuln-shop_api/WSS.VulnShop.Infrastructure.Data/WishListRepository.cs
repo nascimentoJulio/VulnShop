@@ -1,10 +1,11 @@
 ﻿using Dapper;
 using Microsoft.Extensions.Configuration;
 using WSS.VulnShop.Domain.Entities;
+using WSS.VulnShop.Domain.Repository;
 
 namespace WSS.VulnShop.Infrastructure.Data
 {
-    public class WishListRepository : BaseRepository<WishListProduct>
+    public class WishListRepository : BaseRepository<WishListProduct>,  IWishListRepository
     {
         public WishListRepository(IConfiguration configuration) : base(configuration, "wish_lists")
         {

@@ -3,7 +3,7 @@ using System.Text.Json.Serialization;
 
 namespace WSS.VulnShop.Domain.Cart.DeleteItem
 {
-    public class DeleteItemCommand : BaseRequest, IRequest<int>
+    public class DeleteItemCommand : BaseRequest<int>
     {
         [JsonIgnore]
         public int ProductId { get; set; }

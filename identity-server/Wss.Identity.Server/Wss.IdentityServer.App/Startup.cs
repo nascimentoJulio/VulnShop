@@ -25,6 +25,10 @@ namespace Wss.IdentityServer.App
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
+            services.AddCors(p => p.AddPolicy("corsapp", builder =>
+             {
+                 builder.AllowAnyMethod().AllowAnyHeader().AllowAnyOrigin();
+             }));
             services.AddIdentityServer()
                 .AddInMemoryClients(IdentityServerConfig.Clients)
                 .AddInMemoryIdentityResources(IdentityServerConfig.IdentityResources)
@@ -50,7 +54,7 @@ namespace Wss.IdentityServer.App
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
+            app.UseCors("corsapp");
             app.UseRouting();
             app.UseIdentityServer();
             app.UseAuthorization();

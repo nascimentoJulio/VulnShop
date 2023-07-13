@@ -2,7 +2,7 @@
 
 namespace WSS.VulnShop.Domain.Products.GetAllProducts
 {
-    public class GetProductsCommand : BaseRequest, IRequest<List<GetProductsCommandResult>>
+    public class GetProductsCommand : BaseRequest<List<GetProductsCommandResult>>
     {
         public int Limit { get; init; }
 

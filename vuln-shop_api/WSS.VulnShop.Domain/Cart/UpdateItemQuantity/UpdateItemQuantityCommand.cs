@@ -3,7 +3,7 @@ using System.Text.Json.Serialization;
 
 namespace WSS.VulnShop.Domain.Cart.UpdateItemQuantity
 {
-    public class UpdateItemQuantityCommand : BaseRequest, IRequest<int>
+    public class UpdateItemQuantityCommand : BaseRequest<int>
     {
         public int ProductId { get; set; }
 
